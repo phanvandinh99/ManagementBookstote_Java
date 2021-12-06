@@ -29,7 +29,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("l");
+        setTitle("Login");
 
         jLabel1.setText("Phần Giao Diện");
 

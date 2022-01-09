@@ -574,3 +574,6 @@ go
 	join deleted
 	on Book.Book_ID = deleted.Book_ID
 end
+
+-- Câu truy vấn
+select * from Staff where Username = 'admin' and Passwork = 'admin123'

@@ -379,7 +379,7 @@ public class frmSanPhamAn extends javax.swing.JFrame {
         }
       LayDuLieuSanPham("0");
       ResSanPham();
-      project_Sem2.Project_SEM2.frmTC.LayDuLieuSanPham("1");
+      project_Sem2.Project_SEM2.frmTC.LayDuLieuSanPham(1);
     }//GEN-LAST:event_btnHienlai_SanPhamAnActionPerformed
   public void ResSanPham(){
         txtMaSanPham_SanPhamAn.setText("");

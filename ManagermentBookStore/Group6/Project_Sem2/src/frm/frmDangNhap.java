@@ -62,7 +62,11 @@ public class frmDangNhap extends javax.swing.JFrame {
 
         lblUserName.setText("Tên đăng nhập");
 
+        txtUserName.setText("admin");
+
         lblPassword.setText("Mật khẩu");
+
+        txtPassword.setText("admin123");
 
         chkbNhoMatKhau.setForeground(new java.awt.Color(102, 153, 255));
         chkbNhoMatKhau.setText("nhớ Mật Khẩu");
@@ -191,7 +195,7 @@ public class frmDangNhap extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlCopyright, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

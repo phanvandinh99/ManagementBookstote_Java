@@ -117,7 +117,7 @@ public class frmAnSanPham extends javax.swing.JFrame {
         } else {
             project_Sem2.Project_SEM2.frmTC.ThongBao("Không thể ", "Sửa Sản Phẩm", 2);
         }
-        project_Sem2.Project_SEM2.frmTC.LayDuLieuSanPham("1");
+        project_Sem2.Project_SEM2.frmTC.LayDuLieuSanPham(1);
         this.dispose();
     }//GEN-LAST:event_btnAnSanPhamActionPerformed
 

@@ -170,6 +170,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUserName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="admin"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblPassword">
               <Properties>
@@ -177,6 +180,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtPassword">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="admin123"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="chkbNhoMatKhau">
               <Properties>

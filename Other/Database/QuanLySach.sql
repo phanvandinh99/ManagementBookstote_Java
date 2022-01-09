@@ -577,3 +577,32 @@ end
 
 -- Câu truy vấn
 select * from Staff where Username = 'admin' and Passwork = 'admin123'
+-- 
+select O.Order_ID, B.Book_Name, O.OD_Quantity, O.OD_Intomoney 
+from OrderDetails as O
+join Book as B on B.Book_ID = O.Book_ID where O.Order_ID=1
+-- Phiếu nhập
+select D.Import_ID, B.Book_Name, D.Amount, D.Price, D.OD_Intomoney 
+from ImportBook as I
+join DetailImport as D on I.Import_ID = D.Import_ID
+join Book as B on B.Book_ID = D.Book_ID
+where I.Import_ID =1
+-- sản phẩm
+select B.Book_ID, B.Book_Name, B.Book_Price, B.Book_Pricesold, B.Book_Quantily, B.Book_Quantitysold, T.Topic_Name, P.PC_Name, B.Book_Images
+from Topic as T
+join Book as B on T.Topic_ID = B.Topic_ID
+join PublishingCompany as P on P.PC_ID = B.PC_ID
+where B.Book_Status = 0
+---- Nhập
+insert into Book(Book_Name, Book_Price, Book_Pricesold, Book_Description, Book_Images, Book_Dateupdate, Book_Quantily, Book_Quantitysold, PC_ID, Topic_ID) 
+values (N'ten', 100, 150, N'Mô tả',N'image_140616.jpg','01/01/2017',0, 0, 2,3);
+
+select * from Book
+
+
+
+
+
+
+
+

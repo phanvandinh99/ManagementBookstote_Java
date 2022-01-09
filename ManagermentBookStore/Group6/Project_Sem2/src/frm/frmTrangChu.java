@@ -416,23 +416,23 @@ public class frmTrangChu extends javax.swing.JFrame {
 
         tblHoaDon_HoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã Hóa Đơn", "Khách Hàng", "Nhân Viên", "Ngày Lập HĐ", "Tổng Tiền", "Ghi Chú"
+                "STT", "ID", "Name Customers", "Date", "Total Money", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -476,7 +476,7 @@ public class frmTrangChu extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel34.setText("Bảng Chi Tiết Hóa Đơn");
+        jLabel34.setText("Detail Order");
 
         jPanel14.setBackground(new java.awt.Color(204, 204, 255));
         jPanel14.setPreferredSize(new java.awt.Dimension(400, 227));
@@ -628,7 +628,7 @@ public class frmTrangChu extends javax.swing.JFrame {
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel35.setText("Bảng Hóa Đơn");
+        jLabel35.setText("Order");
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 255));
         jPanel19.setPreferredSize(new java.awt.Dimension(400, 230));
@@ -732,7 +732,7 @@ public class frmTrangChu extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 54, Short.MAX_VALUE)
                         .addComponent(btnThem_ChiTietHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnXoa_ChiTietHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -745,7 +745,7 @@ public class frmTrangChu extends javax.swing.JFrame {
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -784,27 +784,27 @@ public class frmTrangChu extends javax.swing.JFrame {
         jPanelHoaDonLayout.setHorizontalGroup(
             jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHoaDonLayout.createSequentialGroup()
-                .addGroup(jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHoaDonLayout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(jLabel35))
-                    .addGroup(jPanelHoaDonLayout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jLabel34)))
-                .addContainerGap(810, Short.MAX_VALUE))
-            .addGroup(jPanelHoaDonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
                     .addComponent(jScrollPane15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHoaDonLayout.createSequentialGroup()
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
                     .addGroup(jPanelHoaDonLayout.createSequentialGroup()
-                        .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                        .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                         .addContainerGap())))
+            .addGroup(jPanelHoaDonLayout.createSequentialGroup()
+                .addGroup(jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelHoaDonLayout.createSequentialGroup()
+                        .addGap(317, 317, 317)
+                        .addComponent(jLabel35))
+                    .addGroup(jPanelHoaDonLayout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jLabel34)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelHoaDonLayout.setVerticalGroup(
             jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -813,7 +813,7 @@ public class frmTrangChu extends javax.swing.JFrame {
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addComponent(jLabel34)
@@ -2137,10 +2137,8 @@ public class frmTrangChu extends javax.swing.JFrame {
             }
         });
 
-        lblLoiMaKhachHang_KhachHang4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lblLoiMaKhachHang_KhachHang4.setForeground(new java.awt.Color(255, 0, 51));
 
-        lblLoiMaKhachHang_KhachHang5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lblLoiMaKhachHang_KhachHang5.setForeground(new java.awt.Color(255, 0, 51));
 
         javax.swing.GroupLayout jPanel_KhachHangLayout = new javax.swing.GroupLayout(jPanel_KhachHang);
@@ -2587,7 +2585,7 @@ public class frmTrangChu extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 2, Short.MAX_VALUE)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnThem_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2636,7 +2634,7 @@ public class frmTrangChu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -5560,10 +5558,9 @@ if (!txtMaPhieuNhap_PhieuNhap.getText().equals("")) {
 
     public void LayDuLieuHoaDon() {
         String cautruyvan = "";
-        cautruyvan = "select MaHoaDon,KhachHang.TenKhachHang as TenKhachHang,NhanVien.TenNhanVien,TongTien,NgayLapHoaDon,HoaDon.GhiChu from HoaDon,KhachHang,NhanVien where HoaDon.MaKhachHang =KhachHang.MaKhachHang "
-                + "and HoaDon.MaNhanVien=NhanVien.MaNhanVien ";
+        cautruyvan = "select * from Orders";
         ResultSet rs = Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
-        Object[] obj = new Object[]{"STT", "Mã hóa đơn", "Khách Hàng ", "Nhân viên", "Ngày lập hóa dơn", "tổng tiền", "Chú Thích"};
+        Object[] obj = new Object[]{"STT", "ID", "Customer Name", "Date", "Total Money", "Status"};
         DefaultTableModel tableModel = new DefaultTableModel(obj, 0);
         tblHoaDon_HoaDon.setModel(tableModel);
         int c = 0;
@@ -5572,12 +5569,12 @@ if (!txtMaPhieuNhap_PhieuNhap.getText().equals("")) {
                 Object[] item = new Object[7];
                 c++;
                 item[0] = c;
-                item[1] = rs.getInt("MaHoaDon");
-                item[2] = rs.getString("TenKhachHang");
-                item[3] = rs.getString("TenNhanVien");
-                item[4] = rs.getString("NgayLapHoaDon");
-                item[5] = rs.getInt("TongTien");
-                item[6] = rs.getString("GhiChu");
+                item[1] = rs.getInt("Order_ID");
+                item[2] = rs.getString("Order_Customersname");
+                item[3] = rs.getDate("Order_date");
+                item[4] = rs.getFloat("Order_Totalmoney");
+                item[5] = rs.getInt("Order_Status");
+
                 tableModel.addRow(item);
             }
         } catch (SQLException ex) {

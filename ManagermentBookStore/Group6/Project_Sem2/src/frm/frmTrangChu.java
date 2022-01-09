@@ -4445,7 +4445,7 @@ public class frmTrangChu extends javax.swing.JFrame {
                 + "from Topic as T "
                 + "join Book as B on T.Topic_ID = B.Topic_ID "
                 + "join PublishingCompany as P on P.PC_ID = B.PC_ID "
-                + "where B.Book_Status =" + TrangThai;
+                + "where B.Book_Status = " + TrangThai;
         ResultSet rs = Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
         Object[] obj = new Object[]{"STT", "ID", "Book Name", "Price", "Price Sold", "Quantity", "Quantity Sold", "Topic Name", "PC Name", "Images"};
         DefaultTableModel tableModel = new DefaultTableModel(obj, 0);

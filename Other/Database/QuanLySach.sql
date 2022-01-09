@@ -67,12 +67,14 @@ create table Book
 (
 	Book_ID int identity(1,1) primary key,
 	Book_Name nvarchar(200) ,
-	Book_Price money default(100000) null,
+	Book_Price float default(100000) null,
+	Book_Pricesold float default(0) null,
 	Book_Description nvarchar(max) null,
 	Book_Images nvarchar(150) null,
-	Book_Dateupdate datetime default(getdate()),
+	Book_Dateupdate date default(getdate()),
 	Book_Quantily int default(0) null,
 	Book_Quantitysold int default(0) null,
+	Book_Status int default(0) null,
 
 	PC_ID int not null,
 	Topic_ID int not null,
@@ -388,7 +390,7 @@ create table OrderDetails
 	Book_ID int,
 	primary key(Order_ID, Book_ID),
 	OD_Quantity int ,
-	OD_Intomoney money,
+	OD_Intomoney float,
 
 	foreign key (Order_ID) references Orders(Order_ID) on delete cascade on update cascade,
 	foreign key (Book_ID) references Book(Book_ID) on delete cascade on update cascade,
@@ -460,7 +462,7 @@ Create table ImportBook
 	Import_Name int not null,
 	Username varchar(50) not null,
 	Import_Date date  null default(getdate()), -- lấy ngày nhập tự động hôm dó --
-	Import_Totalmoney money not null,
+	Import_Totalmoney float not null,
 		
 	-- các khóa ngoại--
 	foreign key (Username) references Staff(Username) on update cascade on delete cascade,
@@ -483,8 +485,8 @@ Create table DetailImport
 	primary key (Import_ID, Book_ID),
 	Amount int not null,
 		check (Amount >=0 ),
-	Price money not null,
-	OD_Intomoney money null, -- mặc định để trống sau code thành tiền = số lượng * giá sách nhập --
+	Price float not null,
+	OD_Intomoney float null, -- mặc định để trống sau code thành tiền = số lượng * giá sách nhập --
 	-- các khóa --
 
 	foreign key (Import_ID) references ImportBook(Import_ID) on update cascade on delete cascade,

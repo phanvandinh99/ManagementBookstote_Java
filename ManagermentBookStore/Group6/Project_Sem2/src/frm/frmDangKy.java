@@ -60,8 +60,6 @@ public class frmDangKy extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtRetypePasswword = new javax.swing.JPasswordField();
         txtMaNhanVien = new javax.swing.JTextField();
-        pnlCopyright = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -80,16 +78,16 @@ public class frmDangKy extends javax.swing.JFrame {
 
         lblRegisterTitle.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblRegisterTitle.setForeground(new java.awt.Color(255, 51, 0));
-        lblRegisterTitle.setText("Tạo Tài Khoản");
+        lblRegisterTitle.setText("Regist");
 
-        lblUserName.setText("Tên đăng nhập");
+        lblUserName.setText("Username");
 
-        lblPassword.setText("Mật khẩu");
+        lblPassword.setText("Password");
 
-        lblRetypePassword.setText("Mã Nhân Viên");
+        lblRetypePassword.setText("Name");
 
         btnĐangKy.setForeground(new java.awt.Color(255, 153, 51));
-        btnĐangKy.setText("Tạo Tài Khoản Mới");
+        btnĐangKy.setText("Create");
         btnĐangKy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnĐangKyActionPerformed(evt);
@@ -97,14 +95,14 @@ public class frmDangKy extends javax.swing.JFrame {
         });
 
         btnDangNhap.setForeground(new java.awt.Color(255, 153, 51));
-        btnDangNhap.setText("Đăng Nhập Ngay");
+        btnDangNhap.setText("Login Now");
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDangNhapActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Nhập Lại Mật Khẩu");
+        jLabel5.setText("Retype");
 
         javax.swing.GroupLayout pnlRegisterInfoLayout = new javax.swing.GroupLayout(pnlRegisterInfo);
         pnlRegisterInfo.setLayout(pnlRegisterInfoLayout);
@@ -117,7 +115,7 @@ public class frmDangKy extends javax.swing.JFrame {
                         .addComponent(btnĐangKy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnDangNhap)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 74, Short.MAX_VALUE))
                     .addGroup(pnlRegisterInfoLayout.createSequentialGroup()
                         .addGroup(pnlRegisterInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblUserName)
@@ -125,13 +123,14 @@ public class frmDangKy extends javax.swing.JFrame {
                             .addComponent(lblRetypePassword)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlRegisterInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRegisterTitle)
-                            .addGroup(pnlRegisterInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtMaNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                .addComponent(txtRetypePasswword, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(pnlRegisterInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtMaNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(txtRetypePasswword, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlRegisterInfoLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(lblRegisterTitle)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlRegisterInfoLayout.setVerticalGroup(
@@ -162,45 +161,20 @@ public class frmDangKy extends javax.swing.JFrame {
                 .addGap(107, 107, 107))
         );
 
-        pnlCopyright.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 102)));
-
-        jLabel1.setText(" liên hệ admin để cấp quyền truy cập cao hơn");
-
-        javax.swing.GroupLayout pnlCopyrightLayout = new javax.swing.GroupLayout(pnlCopyright);
-        pnlCopyright.setLayout(pnlCopyrightLayout);
-        pnlCopyrightLayout.setHorizontalGroup(
-            pnlCopyrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCopyrightLayout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
-        );
-        pnlCopyrightLayout.setVerticalGroup(
-            pnlCopyrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCopyrightLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlCopyright, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlCopyright, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -388,14 +362,12 @@ public class frmDangKy extends javax.swing.JFrame {
     private javax.swing.JButton btnDangNhap;
     private javax.swing.JButton btnĐangKy;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegisterTitle;
     private javax.swing.JLabel lblRetypePassword;
     private javax.swing.JLabel lblUserName;
-    private javax.swing.JPanel pnlCopyright;
     private javax.swing.JPanel pnlRegisterInfo;
     private javax.swing.JTextField txtMaNhanVien;
     private javax.swing.JPasswordField txtPassword;

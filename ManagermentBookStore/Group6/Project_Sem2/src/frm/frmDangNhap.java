@@ -45,8 +45,6 @@ public class frmDangNhap extends javax.swing.JFrame {
         chkbNhoMatKhau = new javax.swing.JCheckBox();
         btnĐangKy = new javax.swing.JButton();
         btnDangNhap = new javax.swing.JButton();
-        pnlCopyright = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -58,18 +56,18 @@ public class frmDangNhap extends javax.swing.JFrame {
 
         lblRegisterTitle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblRegisterTitle.setForeground(new java.awt.Color(51, 102, 255));
-        lblRegisterTitle.setText("QUẢN LÝ CỬA HÀNG");
+        lblRegisterTitle.setText("Books Managerment");
 
-        lblUserName.setText("Tên đăng nhập");
+        lblUserName.setText("Username");
 
         txtUserName.setText("admin");
 
-        lblPassword.setText("Mật khẩu");
+        lblPassword.setText("Password");
 
         txtPassword.setText("admin123");
 
         chkbNhoMatKhau.setForeground(new java.awt.Color(102, 153, 255));
-        chkbNhoMatKhau.setText("nhớ Mật Khẩu");
+        chkbNhoMatKhau.setText("Remember Password");
         chkbNhoMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbNhoMatKhauActionPerformed(evt);
@@ -77,7 +75,7 @@ public class frmDangNhap extends javax.swing.JFrame {
         });
 
         btnĐangKy.setForeground(new java.awt.Color(255, 153, 51));
-        btnĐangKy.setText("Đăng ký");
+        btnĐangKy.setText("Regist");
         btnĐangKy.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 btnĐangKyMouseMoved(evt);
@@ -101,7 +99,7 @@ public class frmDangNhap extends javax.swing.JFrame {
         });
 
         btnDangNhap.setForeground(new java.awt.Color(255, 153, 51));
-        btnDangNhap.setText("Đăng Nhập");
+        btnDangNhap.setText("Login");
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDangNhapActionPerformed(evt);
@@ -158,46 +156,19 @@ public class frmDangNhap extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        pnlCopyright.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 102)));
-
-        jLabel1.setText("liên Hệ admin để được cấp quyền truy cập cao hơn");
-
-        javax.swing.GroupLayout pnlCopyrightLayout = new javax.swing.GroupLayout(pnlCopyright);
-        pnlCopyright.setLayout(pnlCopyrightLayout);
-        pnlCopyrightLayout.setHorizontalGroup(
-            pnlCopyrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCopyrightLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        pnlCopyrightLayout.setVerticalGroup(
-            pnlCopyrightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCopyrightLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlCopyright, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(pnlRegisterInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlCopyright, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -207,14 +178,15 @@ public class frmDangNhap extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -341,13 +313,11 @@ public class frmDangNhap extends javax.swing.JFrame {
     private javax.swing.JButton btnDangNhap;
     private javax.swing.JButton btnĐangKy;
     private javax.swing.JCheckBox chkbNhoMatKhau;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegisterTitle;
     private javax.swing.JLabel lblUserName;
-    private javax.swing.JPanel pnlCopyright;
     private javax.swing.JPanel pnlRegisterInfo;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;

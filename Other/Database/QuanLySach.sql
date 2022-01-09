@@ -445,15 +445,15 @@ Create table Staff
 )
 go
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) 
-values ('admin', 'admin123', 'Quản lý website', '2/2/1999', N'Nam', 'admin@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);
+values ('admin', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) 
-values ('kho', 'kho', 'Nhân Viên Kho', '2/2/1999', N'Nam', 'Kho@gmail.com', '0971010281', N'Đà Nẵng',0, 1);
+values ('kho', 'kho', N'Nhân Viên Kho', '2/2/1999', N'Nam', 'Kho@gmail.com', '0971010281', N'Đà Nẵng',0, 1);
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) 
-values ('admin3', 'admin123', 'Quản lý website', '2/2/1999', N'Nam', 'admin3@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);
+values ('admin3', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin3@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) 
-values ('adm', 'admin123', 'Quản lý website', '2/2/1999', N'Nam', 'admin4@gmail.com', '0971010281', N'Đà Nẵng', 0, 2);
+values ('adm', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin4@gmail.com', '0971010281', N'Đà Nẵng', 0, 2);
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID)  
-values ('admin5', 'admin123', 'Quản lý website', '2/2/1999', N'Nam', 'admin5@gmail.com', '0971010281', N'Đà Nẵng', 0,2);
+values ('admin5', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin5@gmail.com', '0971010281', N'Đà Nẵng', 0,2);
 go
 	--Bảng Phiếu Nhập--
 Create table ImportBook
@@ -577,31 +577,40 @@ go
 	on Book.Book_ID = deleted.Book_ID
 end
 
--- Câu truy vấn
-select * from Staff where Username = 'admin' and Passwork = 'admin123'
--- 
-select O.Order_ID, B.Book_Name, O.OD_Quantity, O.OD_Intomoney 
-from OrderDetails as O
-join Book as B on B.Book_ID = O.Book_ID where O.Order_ID=1
--- Phiếu nhập
-select D.Import_ID, B.Book_Name, D.Amount, D.Price, D.OD_Intomoney 
-from ImportBook as I
-join DetailImport as D on I.Import_ID = D.Import_ID
-join Book as B on B.Book_ID = D.Book_ID
-where I.Import_ID =1
--- sản phẩm
-select B.Book_ID, B.Book_Name, B.Book_Price, B.Book_Pricesold, B.Book_Quantily, B.Book_Quantitysold, T.Topic_Name, P.PC_Name, B.Book_Images
-from Topic as T
-join Book as B on T.Topic_ID = B.Topic_ID
-join PublishingCompany as P on P.PC_ID = B.PC_ID
-where B.Book_Status = 0
----- Nhập
-insert into Book(Book_Name, Book_Price, Book_Pricesold, Book_Description, Book_Images, Book_Dateupdate, Book_Quantily, Book_Quantitysold, PC_ID, Topic_ID) 
-values (N'ten', 100, 150, N'Mô tả',N'image_140616.jpg','01/01/2017',0, 0, 2,3);
+---- Câu truy vấn
+--select * from Staff where Username = 'admin' and Passwork = 'admin123'
+---- 
+--select O.Order_ID, B.Book_Name, O.OD_Quantity, O.OD_Intomoney 
+--from OrderDetails as O
+--join Book as B on B.Book_ID = O.Book_ID where O.Order_ID=1
+---- Phiếu nhập
+--select D.Import_ID, B.Book_Name, D.Amount, D.Price, D.OD_Intomoney 
+--from ImportBook as I
+--join DetailImport as D on I.Import_ID = D.Import_ID
+--join Book as B on B.Book_ID = D.Book_ID
+--where I.Import_ID =1
+---- sản phẩm
+--select B.Book_ID, B.Book_Name, B.Book_Price, B.Book_Pricesold, B.Book_Quantily, B.Book_Quantitysold, T.Topic_Name, P.PC_Name, B.Book_Images
+--from Topic as T
+--join Book as B on T.Topic_ID = B.Topic_ID
+--join PublishingCompany as P on P.PC_ID = B.PC_ID
+--where B.Book_Status = 0
+------ Nhập
+--insert into Book(Book_Name, Book_Price, Book_Pricesold, Book_Description, Book_Images, Book_Dateupdate, Book_Quantily, Book_Quantitysold, PC_ID, Topic_ID) 
+--values (N'ten', 100, 150, N'Mô tả',N'image_140616.jpg','01/01/2017',0, 0, 2,3);
 
-select * from Book
+--update Book
+--set Book_Name =N'x', Book_Price = 2, Book_Pricesold = 3, Book_Images=N'abc.jpg', PC_ID=1, Topic_ID=2
+--where Book_ID = 1
 
 
+--select * from Book where Book_ID=1
+---- Nhân viên list
+--select S.Username, S.Passwork, S.Staff_Name, S.Staff_Birthdate, S.Staff_Sex, S.Staff_Phonenumber, S.Staff_Address, R.Role_Name
+--from Staff as S
+--join Role as R on S.Role_ID = S.Role_ID
+--where R.Role_ID=1
+--Warehouse Staff
 
 
 

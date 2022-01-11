@@ -191,7 +191,7 @@ public class frmDangKy extends javax.swing.JFrame {
         TenDangNhap = txtUserName.getText();
         Password = String.valueOf(txtPassword.getPassword()).trim();
         NhapLai = String.valueOf(txtRetypePasswword.getPassword());
-        String cautruyvan = "select *from Quyen ";
+        String cautruyvan = "select * from Quyen ";
         ResultSet rs = Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
         try {
             while (rs.next()) {

@@ -434,7 +434,7 @@ Create table Staff
 	Staff_Name nvarchar(50) not null,
 	Staff_Birthdate Date not null,
 	Staff_Sex nvarchar(10) null,
-	Staff_Email varchar(50) null unique, -- email không được trùng
+	Staff_Email varchar(50) null, -- email không được trùng
 	Staff_Phonenumber varchar(10) not null,
 	Staff_Address nvarchar(500) not null,
 	Staff_Status int default(0),
@@ -454,6 +454,10 @@ insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, S
 values ('adm', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin4@gmail.com', '0971010281', N'Đà Nẵng', 0, 2);
 insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID)  
 values ('admin5', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin5@gmail.com', '0971010281', N'Đà Nẵng', 0,2);
+insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID)  
+values ('admin6', 'abc123', N'Quản lý website', '2/2/1999', N'Nữ', 'admin6@gmail.com', '0971010281', N'Đà Nẵng', 0,2);
+insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID)  
+values ('Dinh', 'abc123', N'Quản lý website', '2/2/1999', N'Nữ', 'admin6@gmail.com', '0971010281', N'Đà Nẵng', 0,2);
 go
 	--Bảng Phiếu Nhập--
 Create table ImportBook
@@ -611,9 +615,17 @@ end
 --join Role as R on S.Role_ID = S.Role_ID
 --where R.Role_ID=1
 --Warehouse Staff
+--
+select * from Staff
+select * from Role
+update Role set Role_Name = N'Employee' where Role_ID = 1
+delete Role where Role_ID = 1
 
+update Staff set Passwork = 'abc', Staff_Name = N'Phan Định', Staff_Birthdate = '01/01/1999', Staff_Phonenumber='123456789', Staff_Address = N'Huế', Role_ID = 1 where Username = 'Dinh2'
+delete Staff where Username = 'Dinh2'
 
-
-
+select S.Username, S.Passwork, S.Staff_Name, S.Staff_Birthdate, S.Staff_Sex, S.Staff_Phonenumber, S.Staff_Address, R.Role_Name
+from Staff as S 
+join Role as R on S.Role_ID = S.Role_ID
 
 

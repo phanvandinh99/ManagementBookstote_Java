@@ -624,8 +624,11 @@ delete Role where Role_ID = 1
 update Staff set Passwork = 'abc', Staff_Name = N'Phan Định', Staff_Birthdate = '01/01/1999', Staff_Phonenumber='123456789', Staff_Address = N'Huế', Role_ID = 1 where Username = 'Dinh2'
 delete Staff where Username = 'Dinh2'
 
-select S.Username, S.Passwork, S.Staff_Name, S.Staff_Birthdate, S.Staff_Sex, S.Staff_Phonenumber, S.Staff_Address, R.Role_Name
+select S.Username, S.Passwork, S.Staff_Name, S.Staff_Birthdate, S.Staff_Sex, S.Staff_Phonenumber, S.Staff_Address, R.Role_Name, S.Staff_Status
 from Staff as S 
-join Role as R on S.Role_ID = S.Role_ID
+join Role as R on S.Role_ID = R.Role_ID where S.Staff_Status>3 and Staff_Birthdate = GETDATE()
 
 
+select * from Topic
+
+Update Topic set Topic_Name = N'' where Topic_ID = 

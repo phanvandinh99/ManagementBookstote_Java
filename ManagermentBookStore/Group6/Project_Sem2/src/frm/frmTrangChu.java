@@ -2799,8 +2799,8 @@ public class frmTrangChu extends javax.swing.JFrame {
         } catch (Exception e) {
         }
         //int Gia = GetGiaSanPham(GetCbbSelected(cbbSanPham_ChiTietHoaDon));
-        Tien = (double) Gia * SoLuong;
-        txtGiaBan_HoaDon.setText(String.valueOf(Tien));
+        //Tien = (double) Gia * SoLuong;
+        //txtGiaBan_HoaDon.setText(String.valueOf(Tien));
     }//GEN-LAST:event_txtSoLuong_HoaDonKeyReleased
 
     private void txtSoLuong_HoaDonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSoLuong_HoaDonKeyPressed
@@ -2955,6 +2955,17 @@ public class frmTrangChu extends javax.swing.JFrame {
                     System.out.println("Cập nhật tổng tiền trong hóa đơn " + MaHoaDon + " thành công");
                     LayDuLieuHoaDon();
                 }
+              
+            }
+            // trừ sl trong kho
+            // tính số lượng sách
+            String SLSach = "select Book_Quantily slk, Book_Quantitysold as slb from Book where Book_ID = " + MaSach + "";
+            ResultSet SLhuy = project_Sem2.Project_SEM2.connection.ExcuteQueryGetTable(SLSach);
+            if (SLhuy.next()) {
+                int sL = SLhuy.getInt("slk") - SoLuong;
+                int slb = SLhuy.getInt("slb") + SoLuong;
+                String CongLaiSLKho = "update Book set Book_Quantily = " + sL + ", Book_Quantitysold = " + slb + " where Book_ID = " + MaSach + " ";
+                Project_SEM2.connection.ExcuteQueryUpdateDB(CongLaiSLKho);
                 // Load lại sản phẩm
                 int ToppicID = cbbToppic_ChiTietHoaDon.getSelectedIndex();
                 String Ma = String.valueOf(ToppicID);

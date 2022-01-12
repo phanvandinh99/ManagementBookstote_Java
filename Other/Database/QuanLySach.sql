@@ -580,5 +580,3 @@ go
 --	join deleted
 --	on Book.Book_ID = deleted.Book_ID
 --end
-
----- Câu truy vấn nháp

@@ -185,79 +185,114 @@ public class frmDangKy extends javax.swing.JFrame {
     public static int quyen = 0;
     public static String ten = "";
     private void btnĐangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnĐangKyActionPerformed
-        String MaNhanVien, TenDangNhap, Password, NhapLai, Quyen = "";
+        //insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) 
+        //values ('admin', 'admin123', N'Quản lý website', '2/2/1999', N'Nam', 'admin@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);
+        String name = txtMaNhanVien.getText().trim();
+        String user = txtUserName.getText().trim();
+        String pass = String.valueOf(txtPassword.getPassword()).trim();
+        String reppass = String.valueOf(txtRetypePasswword.getPassword()).trim();
 
-        MaNhanVien = txtMaNhanVien.getText().trim();
-        TenDangNhap = txtUserName.getText();
-        Password = String.valueOf(txtPassword.getPassword()).trim();
-        NhapLai = String.valueOf(txtRetypePasswword.getPassword());
-        String cautruyvan = "select * from Quyen ";
-        ResultSet rs = Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
+        if (name.equals("")) {
+            ThongBao("Tên người dùng không bỏ trống", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (user.equals("")) {
+            ThongBao("Tên đăng nhập không được bỏ trống", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (pass.equals("")) {
+            ThongBao("Mật khẩu không được bỏ trống", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (reppass.equals("")) {
+            ThongBao("Nhập lại mật khẩu không được bỏ trống", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!reppass.equals(pass)) {
+            ThongBao("Mật khẩu không khớp", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         try {
-            while (rs.next()) {
-                if (rs.getString("TenQuyen").equals("New")) {
-                    Quyen = rs.getString("MaQuyen");
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.toString());
-        }
-       
-        boolean kt = true;
-
-        if (MaNhanVien.equals("")) {
-            ThongBao("Tên đăng nhập phải từ 6-10 ký tự", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
-        } else {
-            if (TenDangNhap.length() < 6 || TenDangNhap.length() > 10) {
-                ThongBao("Tên đăng nhập phải từ 6-10 ký tự", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
-            } else if (Password.length() < 6 || Password.length() > 50) {
-                ThongBao("Mật khẩu phải nhập nhiều hơn 6 ký tự và ít hơn 50 ký tự", "Lỗi đăng ký", 2);
-            } else if (!KiemTraChuaChuVaSo(Password)) {
-                ThongBao("Mật khẩu phải bao gồm chữ IN HOA, chữ thường và số", "Thông báo", 2);
-            } else if (!Password.equals(NhapLai)) {
-                ThongBao("nhập lại mật khẩu không khớp", "Thông báo", 2);
-            } else {
-
-                String cautruyvan2 = "select * from Users where MaNhanVien= '" + MaNhanVien + "'";
-                ResultSet rs2 = project_Sem2.Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan2);
-                try {
-                    rs2.next();
-                    if (rs.getString("MaNhanVien").equals(MaNhanVien)) {
-                        kt = false;
-                        ThongBao("tài khoản  của nhân viên có mã: " + MaNhanVien + " đã  có trong sql yêu cầu tạo tk với tên đăng nhập khác!", "Thông báo", 2);
-                    }
-
-                } catch (SQLException ex) {
-                    System.out.println("không có trong sql !có thể tạo thêm");
-                    kt = true;
-                }
-                if (kt == true) {
-                 String ctv = "insert into Users values(" + MaNhanVien
-                + " ,'" + TenDangNhap + "' , '" + Password + "' ," + Quyen
-                + ", N' ')";
-        System.out.println(cautruyvan);
-            Project_SEM2.connection.ExcuteQueryUpdateDB(ctv);
+            String cautruyvan = "insert into Staff (Username, Passwork, Staff_Name, Staff_Birthdate, Staff_Sex, Staff_Email, Staff_Phonenumber, Staff_Address, Staff_Status, Role_ID) "
+                    + " values ('" + user + "', '" + pass + "', N'" + name + "', '2/2/1999', N'Nam', 'kho@gmail.com', '0971010281', N'Đà Nẵng', 0, 1);";
+            Project_SEM2.connection.ExcuteQueryUpdateDB(cautruyvan);
             System.out.println("Đã Thêm Thành Công");
-        } else {
-            ThongBao("Không thể Thêm tài Khoản", "lỗi", 2);
-                }
-            }
+            ThongBao("Thêm mới tài khoản thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            System.out.println("Không thành công");
         }
 
-
+//        
+//        
+//        String MaNhanVien, TenDangNhap, Password, NhapLai, Quyen = "";
+//
+//        MaNhanVien = txtMaNhanVien.getText().trim();
+//        TenDangNhap = txtUserName.getText();
+//        Password = String.valueOf(txtPassword.getPassword()).trim();
+//        NhapLai = String.valueOf(txtRetypePasswword.getPassword());
+//        //String cautruyvan = "select * from Quyen ";
+//        //ResultSet rs = Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
+//        //try {
+//            while (rs.next()) {
+//                if (rs.getString("TenQuyen").equals("New")) {
+//                    Quyen = rs.getString("MaQuyen");
+//                }
+//            }
+//        } catch (SQLException ex) {
+//            System.out.println(ex.toString());
+//        }
+//       
+//        boolean kt = true;
+//
+//        if (MaNhanVien.equals("")) {
+//            ThongBao("Tên đăng nhập phải từ 6-10 ký tự", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+//        } else {
+//            if (TenDangNhap.length() < 6 || TenDangNhap.length() > 10) {
+//                ThongBao("Tên đăng nhập phải từ 6-10 ký tự", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+//            } else if (Password.length() < 6 || Password.length() > 50) {
+//                ThongBao("Mật khẩu phải nhập nhiều hơn 6 ký tự và ít hơn 50 ký tự", "Lỗi đăng ký", 2);
+//            } else if (!KiemTraChuaChuVaSo(Password)) {
+//                ThongBao("Mật khẩu phải bao gồm chữ IN HOA, chữ thường và số", "Thông báo", 2);
+//            } else if (!Password.equals(NhapLai)) {
+//                ThongBao("nhập lại mật khẩu không khớp", "Thông báo", 2);
+//            } else {
+//
+//                String cautruyvan2 = "select * from Users where MaNhanVien= '" + MaNhanVien + "'";
+//                ResultSet rs2 = project_Sem2.Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan2);
+//                try {
+//                    rs2.next();
+//                    if (rs.getString("MaNhanVien").equals(MaNhanVien)) {
+//                        kt = false;
+//                        ThongBao("tài khoản  của nhân viên có mã: " + MaNhanVien + " đã  có trong sql yêu cầu tạo tk với tên đăng nhập khác!", "Thông báo", 2);
+//                    }
+//
+//                } catch (SQLException ex) {
+//                    System.out.println("không có trong sql !có thể tạo thêm");
+//                    kt = true;
+//                }
+//                if (kt == true) {
+//                 String ctv = "insert into Users values(" + MaNhanVien
+//                + " ,'" + TenDangNhap + "' , '" + Password + "' ," + Quyen
+//                + ", N' ')";
+//        System.out.println(cautruyvan);
+//            Project_SEM2.connection.ExcuteQueryUpdateDB(ctv);
+//            System.out.println("Đã Thêm Thành Công");
+//        } else {
+//            ThongBao("Không thể Thêm tài Khoản", "lỗi", 2);
+//                }
+//            }
+//        }
     }//GEN-LAST:event_btnĐangKyActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
 
         String strUsername = txtUserName.getText().trim();
         String strPassword = String.valueOf(txtPassword.getPassword()).trim();
-        if(strUsername.equals("")){
+        if (strUsername.equals("")) {
             ThongBao("Bạn Chưa Nhập: Tên Đăng Nhập", "Lỗi đăng nhập", 2);
-        }else
-            if(strPassword.equals("")){
+        } else if (strPassword.equals("")) {
             ThongBao("Bạn Chưa Nhập: Mật Khẩu", "Lỗi đăng nhập", 2);
-        }else
-           if (KiemTra(strUsername, strPassword)) {
+        } else if (KiemTra(strUsername, strPassword)) {
             project_Sem2.Project_SEM2.frmTC.show();
             this.dispose();
         } else {
@@ -266,7 +301,7 @@ public class frmDangKy extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-      
+
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -278,7 +313,7 @@ public class frmDangKy extends javax.swing.JFrame {
     private boolean KiemTra(String tdn, String mk) {
         boolean kq = false;
 
-        String cautruyvan = "select * from Users where TenDangNhap= '" + tdn + "' and Password= '" + mk + "'";
+        String cautruyvan = "select * from Staff where Username = '" + tdn + "' and Passwork = '" + mk + "'";
         System.out.println(cautruyvan);
         ResultSet rs = project_Sem2.Project_SEM2.connection.ExcuteQueryGetTable(cautruyvan);
 
